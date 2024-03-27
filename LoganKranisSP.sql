@@ -1,4 +1,5 @@
-CREATE or Alter PROCEDURE [dbo].[InsertFarm]
+
+CREATE or Alter PROCEDURE[dbo].[InsertFarm]
     @address NVARCHAR(MAX),
     @zipcode NVARCHAR(MAX),
     @city NVARCHAR(MAX),

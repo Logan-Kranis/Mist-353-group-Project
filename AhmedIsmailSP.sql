@@ -16,6 +16,7 @@ BEGIN
     WHERE [FARM_ID] = @FARM_ID;
 END;
 GO
+
 CREATE or ALTER PROCEDURE [dbo].[DeleteFarm]
     @FARM_ID INT
 AS
