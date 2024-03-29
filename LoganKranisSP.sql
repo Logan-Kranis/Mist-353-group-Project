@@ -1,32 +1,20 @@
-
-CREATE or Alter PROCEDURE[dbo].[InsertFarm]
-    @address NVARCHAR(MAX),
-    @zipcode NVARCHAR(MAX),
-    @city NVARCHAR(MAX),
-    @state NVARCHAR(MAX),
-    @name NVARCHAR(MAX),
-    @FARM_ID INT
+use[SmartCrop] 
+go
+CREATE or Alter PROCEDURE [dbo].[GetWeatherByID]
+    @WEATHER_ID int
 AS
 BEGIN
-    INSERT INTO [dbo].[farm] ([address], [zipcode], [city], [state], [name], [FARM_ID])
-    VALUES (@address, @zipcode, @city, @state, @name, @FARM_ID);
+    SELECT * FROM [dbo].[Weather]
+    WHERE [Id] = @WEATHER_ID;
 END;
 GO
 
-/*EXEC [dbo].[InsertFarm]
-    @address = N'123 Farm Lane',
-    @zipcode = N'12345',
-    @city = N'Farmville',
-    @state = N'FS',
-    @name = N'Green Acres',
-    @FARM_ID = 1;
-*/
 
 CREATE or Alter PROCEDURE [dbo].[SelectFarmsByCity]
     @city NVARCHAR(MAX)
 AS
 BEGIN
-    SELECT * FROM [dbo].[farm]
+    SELECT * FROM [dbo].[Farm]
     WHERE [city] = @city;
 END;
 GO
